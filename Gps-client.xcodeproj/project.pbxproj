@@ -13,6 +13,32 @@
 		C08AE6C820A876D800D3CC35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C08AE6C720A876D800D3CC35 /* Assets.xcassets */; };
 		C08AE6CB20A876D800D3CC35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C08AE6C920A876D800D3CC35 /* LaunchScreen.storyboard */; };
 		C08AE6D620A876D800D3CC35 /* Gps_clientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE6D520A876D800D3CC35 /* Gps_clientTests.swift */; };
+		C08AE6E720A877D700D3CC35 /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE6E420A877D700D3CC35 /* Beacon.swift */; };
+		C08AE6E820A877D700D3CC35 /* TagIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE6E520A877D700D3CC35 /* TagIdentifier.swift */; };
+		C08AE6E920A877D700D3CC35 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE6E620A877D700D3CC35 /* Tag.swift */; };
+		C08AE6EF20A877F900D3CC35 /* TagManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE6EC20A877F800D3CC35 /* TagManager.swift */; };
+		C08AE6F320A8786500D3CC35 /* BeaconDetectedPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE6F220A8786500D3CC35 /* BeaconDetectedPayload.swift */; };
+		C08AE6FE20A878B300D3CC35 /* TagRangingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE6F920A878B300D3CC35 /* TagRangingManager.swift */; };
+		C08AE70520A8794900D3CC35 /* NetworkClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE6FF20A8794800D3CC35 /* NetworkClientManager.swift */; };
+		C08AE70620A8794900D3CC35 /* ResponseProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE70020A8794800D3CC35 /* ResponseProcessor.swift */; };
+		C08AE70720A8794900D3CC35 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE70120A8794800D3CC35 /* NetworkRequest.swift */; };
+		C08AE70820A8794900D3CC35 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE70220A8794800D3CC35 /* NetworkClient.swift */; };
+		C08AE70920A8794900D3CC35 /* NetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE70320A8794800D3CC35 /* NetworkTask.swift */; };
+		C08AE70A20A8794900D3CC35 /* NetworkClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE70420A8794800D3CC35 /* NetworkClientError.swift */; };
+		C08AE70C20A8797F00D3CC35 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE70B20A8797F00D3CC35 /* Location.swift */; };
+		C08AE70F20A879F800D3CC35 /* CLLocationManager+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE70E20A879F800D3CC35 /* CLLocationManager+Extensions.swift */; };
+		C08AE71120A87A1F00D3CC35 /* JSONable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE71020A87A1F00D3CC35 /* JSONable.swift */; };
+		C08AE71920A87A6E00D3CC35 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE71220A87A6D00D3CC35 /* Data+Extensions.swift */; };
+		C08AE71A20A87A6E00D3CC35 /* CLLocation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE71320A87A6E00D3CC35 /* CLLocation+Extensions.swift */; };
+		C08AE71B20A87A6E00D3CC35 /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE71420A87A6E00D3CC35 /* URL+Extensions.swift */; };
+		C08AE71E20A87A6E00D3CC35 /* CGFloat+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE71720A87A6E00D3CC35 /* CGFloat+extensions.swift */; };
+		C08AE71F20A87A6E00D3CC35 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE71820A87A6E00D3CC35 /* String+Extensions.swift */; };
+		C08AE72120A87B0200D3CC35 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE72020A87B0200D3CC35 /* Date+Extensions.swift */; };
+		C08AE72320A87BCC00D3CC35 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE72220A87BCC00D3CC35 /* Extensions.swift */; };
+		C08AE72A20A87F8600D3CC35 /* CommonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE72720A87F8600D3CC35 /* CommonService.swift */; };
+		C08AE72B20A87F8600D3CC35 /* PetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE72820A87F8600D3CC35 /* PetService.swift */; };
+		C08AE72C20A87F8600D3CC35 /* BeaconService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE72920A87F8600D3CC35 /* BeaconService.swift */; };
+		C0B5C86621886C0500AC512C /* Toybox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B5C86521886C0500AC512C /* Toybox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +62,32 @@
 		C08AE6D120A876D800D3CC35 /* Gps-clientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gps-clientTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C08AE6D520A876D800D3CC35 /* Gps_clientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gps_clientTests.swift; sourceTree = "<group>"; };
 		C08AE6D720A876D800D3CC35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C08AE6E420A877D700D3CC35 /* Beacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beacon.swift; sourceTree = "<group>"; };
+		C08AE6E520A877D700D3CC35 /* TagIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagIdentifier.swift; sourceTree = "<group>"; };
+		C08AE6E620A877D700D3CC35 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		C08AE6EC20A877F800D3CC35 /* TagManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagManager.swift; sourceTree = "<group>"; };
+		C08AE6F220A8786500D3CC35 /* BeaconDetectedPayload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconDetectedPayload.swift; sourceTree = "<group>"; };
+		C08AE6F920A878B300D3CC35 /* TagRangingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagRangingManager.swift; sourceTree = "<group>"; };
+		C08AE6FF20A8794800D3CC35 /* NetworkClientManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClientManager.swift; sourceTree = "<group>"; };
+		C08AE70020A8794800D3CC35 /* ResponseProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseProcessor.swift; sourceTree = "<group>"; };
+		C08AE70120A8794800D3CC35 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		C08AE70220A8794800D3CC35 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		C08AE70320A8794800D3CC35 /* NetworkTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTask.swift; sourceTree = "<group>"; };
+		C08AE70420A8794800D3CC35 /* NetworkClientError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClientError.swift; sourceTree = "<group>"; };
+		C08AE70B20A8797F00D3CC35 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		C08AE70E20A879F800D3CC35 /* CLLocationManager+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Extensions.swift"; sourceTree = "<group>"; };
+		C08AE71020A87A1F00D3CC35 /* JSONable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONable.swift; sourceTree = "<group>"; };
+		C08AE71220A87A6D00D3CC35 /* Data+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
+		C08AE71320A87A6E00D3CC35 /* CLLocation+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocation+Extensions.swift"; sourceTree = "<group>"; };
+		C08AE71420A87A6E00D3CC35 /* URL+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
+		C08AE71720A87A6E00D3CC35 /* CGFloat+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+extensions.swift"; sourceTree = "<group>"; };
+		C08AE71820A87A6E00D3CC35 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		C08AE72020A87B0200D3CC35 /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		C08AE72220A87BCC00D3CC35 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C08AE72720A87F8600D3CC35 /* CommonService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonService.swift; sourceTree = "<group>"; };
+		C08AE72820A87F8600D3CC35 /* PetService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetService.swift; sourceTree = "<group>"; };
+		C08AE72920A87F8600D3CC35 /* BeaconService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconService.swift; sourceTree = "<group>"; };
+		C0B5C86521886C0500AC512C /* Toybox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toybox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +129,12 @@
 		C08AE6BF20A876D700D3CC35 /* Gps-client */ = {
 			isa = PBXGroup;
 			children = (
+				C0B5C86421886BF800AC512C /* Commons */,
+				C08AE70D20A879E900D3CC35 /* Extesnions */,
+				C08AE6F020A8784900D3CC35 /* Network */,
+				C08AE6E220A8779100D3CC35 /* Managers */,
+				C08AE6E120A8778B00D3CC35 /* Model */,
+				C08AE6E020A8772C00D3CC35 /* Protocols */,
 				C08AE6C020A876D700D3CC35 /* AppDelegate.swift */,
 				C08AE6C220A876D700D3CC35 /* ViewController.swift */,
 				C08AE6C420A876D700D3CC35 /* Main.storyboard */,
@@ -94,6 +152,106 @@
 				C08AE6D720A876D800D3CC35 /* Info.plist */,
 			);
 			path = "Gps-clientTests";
+			sourceTree = "<group>";
+		};
+		C08AE6E020A8772C00D3CC35 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C08AE71020A87A1F00D3CC35 /* JSONable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		C08AE6E120A8778B00D3CC35 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C08AE6F420A878B300D3CC35 /* Beacons */,
+				C08AE6E320A877D700D3CC35 /* Tag */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C08AE6E220A8779100D3CC35 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C08AE6EC20A877F800D3CC35 /* TagManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		C08AE6E320A877D700D3CC35 /* Tag */ = {
+			isa = PBXGroup;
+			children = (
+				C08AE70B20A8797F00D3CC35 /* Location.swift */,
+				C08AE6E420A877D700D3CC35 /* Beacon.swift */,
+				C08AE6E520A877D700D3CC35 /* TagIdentifier.swift */,
+				C08AE6E620A877D700D3CC35 /* Tag.swift */,
+			);
+			path = Tag;
+			sourceTree = "<group>";
+		};
+		C08AE6F020A8784900D3CC35 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C08AE72620A87F7700D3CC35 /* Services */,
+				C08AE70220A8794800D3CC35 /* NetworkClient.swift */,
+				C08AE70420A8794800D3CC35 /* NetworkClientError.swift */,
+				C08AE6FF20A8794800D3CC35 /* NetworkClientManager.swift */,
+				C08AE70120A8794800D3CC35 /* NetworkRequest.swift */,
+				C08AE70320A8794800D3CC35 /* NetworkTask.swift */,
+				C08AE70020A8794800D3CC35 /* ResponseProcessor.swift */,
+				C08AE6F120A8785100D3CC35 /* Payloads */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C08AE6F120A8785100D3CC35 /* Payloads */ = {
+			isa = PBXGroup;
+			children = (
+				C08AE6F220A8786500D3CC35 /* BeaconDetectedPayload.swift */,
+			);
+			path = Payloads;
+			sourceTree = "<group>";
+		};
+		C08AE6F420A878B300D3CC35 /* Beacons */ = {
+			isa = PBXGroup;
+			children = (
+				C08AE6F920A878B300D3CC35 /* TagRangingManager.swift */,
+			);
+			path = Beacons;
+			sourceTree = "<group>";
+		};
+		C08AE70D20A879E900D3CC35 /* Extesnions */ = {
+			isa = PBXGroup;
+			children = (
+				C08AE72020A87B0200D3CC35 /* Date+Extensions.swift */,
+				C08AE70E20A879F800D3CC35 /* CLLocationManager+Extensions.swift */,
+				C08AE71720A87A6E00D3CC35 /* CGFloat+extensions.swift */,
+				C08AE71320A87A6E00D3CC35 /* CLLocation+Extensions.swift */,
+				C08AE71220A87A6D00D3CC35 /* Data+Extensions.swift */,
+				C08AE71820A87A6E00D3CC35 /* String+Extensions.swift */,
+				C08AE71420A87A6E00D3CC35 /* URL+Extensions.swift */,
+				C08AE72220A87BCC00D3CC35 /* Extensions.swift */,
+			);
+			path = Extesnions;
+			sourceTree = "<group>";
+		};
+		C08AE72620A87F7700D3CC35 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C08AE72920A87F8600D3CC35 /* BeaconService.swift */,
+				C08AE72720A87F8600D3CC35 /* CommonService.swift */,
+				C08AE72820A87F8600D3CC35 /* PetService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C0B5C86421886BF800AC512C /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				C0B5C86521886C0500AC512C /* Toybox.swift */,
+			);
+			path = Commons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +304,11 @@
 				TargetAttributes = {
 					C08AE6BC20A876D700D3CC35 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					C08AE6D020A876D800D3CC35 = {
 						CreatedOnToolsVersion = 9.3;
@@ -198,7 +361,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				C08AE6C320A876D700D3CC35 /* ViewController.swift in Sources */,
+				C08AE71A20A87A6E00D3CC35 /* CLLocation+Extensions.swift in Sources */,
+				C08AE6FE20A878B300D3CC35 /* TagRangingManager.swift in Sources */,
+				C08AE70C20A8797F00D3CC35 /* Location.swift in Sources */,
+				C08AE70720A8794900D3CC35 /* NetworkRequest.swift in Sources */,
+				C08AE70620A8794900D3CC35 /* ResponseProcessor.swift in Sources */,
+				C08AE70A20A8794900D3CC35 /* NetworkClientError.swift in Sources */,
+				C08AE72C20A87F8600D3CC35 /* BeaconService.swift in Sources */,
+				C08AE6E820A877D700D3CC35 /* TagIdentifier.swift in Sources */,
+				C08AE72A20A87F8600D3CC35 /* CommonService.swift in Sources */,
+				C08AE6F320A8786500D3CC35 /* BeaconDetectedPayload.swift in Sources */,
+				C08AE70520A8794900D3CC35 /* NetworkClientManager.swift in Sources */,
+				C08AE72B20A87F8600D3CC35 /* PetService.swift in Sources */,
+				C08AE70820A8794900D3CC35 /* NetworkClient.swift in Sources */,
+				C08AE6EF20A877F900D3CC35 /* TagManager.swift in Sources */,
+				C08AE71920A87A6E00D3CC35 /* Data+Extensions.swift in Sources */,
+				C08AE6E920A877D700D3CC35 /* Tag.swift in Sources */,
 				C08AE6C120A876D700D3CC35 /* AppDelegate.swift in Sources */,
+				C08AE71B20A87A6E00D3CC35 /* URL+Extensions.swift in Sources */,
+				C0B5C86621886C0500AC512C /* Toybox.swift in Sources */,
+				C08AE70920A8794900D3CC35 /* NetworkTask.swift in Sources */,
+				C08AE6E720A877D700D3CC35 /* Beacon.swift in Sources */,
+				C08AE71F20A87A6E00D3CC35 /* String+Extensions.swift in Sources */,
+				C08AE72120A87B0200D3CC35 /* Date+Extensions.swift in Sources */,
+				C08AE72320A87BCC00D3CC35 /* Extensions.swift in Sources */,
+				C08AE71120A87A1F00D3CC35 /* JSONable.swift in Sources */,
+				C08AE71E20A87A6E00D3CC35 /* CGFloat+extensions.swift in Sources */,
+				C08AE70F20A879F800D3CC35 /* CLLocationManager+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

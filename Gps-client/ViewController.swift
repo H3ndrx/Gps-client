@@ -8,11 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+final class ViewController: UIViewController {
+	let tagManager: TagManager = Toybox.shared.tagManager
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
+	}
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		self.tagManager.rangingManager.requestAlwaysPermissions(with: { (granted: Bool) in
+			if granted {
+				self.tagManager.refreshLocationServices()
+			}
+		})
 	}
 
 	override func didReceiveMemoryWarning() {
