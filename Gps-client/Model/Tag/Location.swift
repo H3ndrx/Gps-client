@@ -10,16 +10,18 @@ import CoreLocation
 struct Location: Decodable {
 	let latitude: Double
 	let longitude: Double
-	let proximity: Int
+	let accuracy: Double
+	let altitude: Double
 	let timestamp: Date
 	var core: CLLocation {
 		return CLLocation(location: self)
 	}
 	
 	enum CodingKeys: String, CodingKey {
-		case latitude = "lat"
-		case longitude = "lng"
-		case proximity = "prox"
+		case latitude = "latitude"
+		case longitude = "longitude"
+		case accuracy = "accuracy"
+		case altitude = "altitude"
 		case timestamp = "ts"
 	}
 	
@@ -27,15 +29,27 @@ struct Location: Decodable {
 		let container: KeyedDecodingContainer = try decoder.container(keyedBy: CodingKeys.self)
 		self.latitude = try container.decode(Double.self, forKey: .latitude)
 		self.longitude = try container.decode(Double.self, forKey: .longitude)
-		self.proximity = try container.decode(Int.self, forKey: .proximity)
+		self.accuracy = try container.decode(Double.self, forKey: .accuracy)
+		self.altitude = try container.decode(Double.self, forKey: .altitude)
 		self.timestamp = try container.decode(Date.self, forKey: .timestamp)
 	}
 	
-	init(latitude: Double, longitude: Double, proximity: Int, timestamp: Date = Date()) {
+	init(latitude: Double, longitude: Double, accuracy: Double, altitude: Double, timestamp: Date = Date()) {
 		self.latitude = latitude
 		self.longitude = longitude
-		self.proximity = proximity
+		self.accuracy = accuracy
 		self.timestamp = timestamp
+		self.altitude = altitude
+	}
+}
+
+extension Location: JSONable {
+	var json: JSON {
+		return ["latitude": self.latitude,
+				"longitude": self.longitude,
+				"accuracy": self.accuracy,
+				"altitude": self.altitude,
+				"ts": self.timestamp.timestamp]
 	}
 }
 
@@ -43,16 +57,7 @@ extension Location: Equatable {
 	static func == (lhs: Location, rhs: Location) -> Bool {
 		return lhs.latitude == rhs.latitude &&
 			lhs.longitude == rhs.longitude &&
-			lhs.proximity == rhs.proximity &&
+			lhs.accuracy == rhs.accuracy &&
 			lhs.timestamp == rhs.timestamp
-	}
-}
-
-extension Location: JSONable {
-	var json: JSON {
-		return ["lat": self.latitude,
-				"lng": self.longitude,
-				"prox": self.proximity,
-				"ts": self.timestamp.timestamp]
 	}
 }

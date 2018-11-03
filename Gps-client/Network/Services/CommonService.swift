@@ -9,10 +9,10 @@
 import Foundation
 
 extension URL {
-	static let base: URL = URL(string: "http://localhost:8080")!
+	static let base: URL = URL(string: "http://192.168.0.73:8080")!
 	
-	static func url(forService service: Service, endpoint: Endpoint, path: String = String.empty) -> URL {
-		let urlString: String = "\(service.rawValue)\(endpoint.rawValue)\(path)"
+	static func url(forEndpoint endpoint: Endpoint, path: String = String.empty) -> URL {
+		let urlString: String = "/api/v1\(endpoint.rawValue)\(path)"
 		
 		guard let url: URL = URL(string: urlString, relativeTo: URL.base) else {
 			fatalError("Incorrect string for url")
@@ -21,31 +21,8 @@ extension URL {
 	}
 }
 
-enum Service: String {
-	case user = "/user/api"
-	case pet = "/pet/api"
-	case mobile = "/mobile/api"
-	case beacon = "/beacon/api"
-	case resource = "/resource/api"
-}
-
 enum Endpoint: String {
-	// MARK: User
-	case authorization = "/auth"
-	case phoneVerification = "/user/phone"
-	case password = "/user/password"
-	case user = "/user"
-	
-	// MARK: Pet
-	case pets = "/pets"
-	case tags = "/tags"
-	case devices = "/devices"
-	
-	// MARK: Beacon
-	case beacons = "/beacon"
-	
-	// MARK: Resource
-	case images = "/images"
+	case tag = "/tag"
 }
 
 struct Path { }

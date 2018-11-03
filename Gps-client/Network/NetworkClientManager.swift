@@ -16,7 +16,7 @@ protocol NetworkClientManagerProtocol {
 
 extension NetworkClientManagerProtocol {
 	@discardableResult
-	func performRequest(with url: URL, method: NetworkMethod, body: JSON? = nil, isSigned: Bool = true, priority: NetworkRequestPriority = NetworkRequestPriority.normal, completionHandler: ((_ data: Data?, _ error: Error?) -> Void)?) -> NetworkTask {
+	func performRequest(with url: URL, method: NetworkMethod, body: JSON? = nil, isSigned: Bool = false, priority: NetworkRequestPriority = NetworkRequestPriority.normal, completionHandler: ((_ data: Data?, _ error: Error?) -> Void)?) -> NetworkTask {
 		return self.performRequest(with: url, method: method, body: body, isSigned: isSigned, priority: priority, completionHandler: completionHandler)
 	}
 }

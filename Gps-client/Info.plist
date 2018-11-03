@@ -54,5 +54,10 @@
 	<string>To detect your pets, we need acces to your location.</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>In order to pair and use Pawscout beacon</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

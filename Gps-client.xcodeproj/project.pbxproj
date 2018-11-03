@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C087359D218DFF19004031D2 /* TagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C087359C218DFF19004031D2 /* TagTableViewCell.swift */; };
 		C08AE6C120A876D700D3CC35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE6C020A876D700D3CC35 /* AppDelegate.swift */; };
-		C08AE6C320A876D700D3CC35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE6C220A876D700D3CC35 /* ViewController.swift */; };
+		C08AE6C320A876D700D3CC35 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE6C220A876D700D3CC35 /* MainViewController.swift */; };
 		C08AE6C620A876D700D3CC35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C08AE6C420A876D700D3CC35 /* Main.storyboard */; };
 		C08AE6C820A876D800D3CC35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C08AE6C720A876D800D3CC35 /* Assets.xcassets */; };
 		C08AE6CB20A876D800D3CC35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C08AE6C920A876D800D3CC35 /* LaunchScreen.storyboard */; };
@@ -36,7 +37,6 @@
 		C08AE72120A87B0200D3CC35 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE72020A87B0200D3CC35 /* Date+Extensions.swift */; };
 		C08AE72320A87BCC00D3CC35 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE72220A87BCC00D3CC35 /* Extensions.swift */; };
 		C08AE72A20A87F8600D3CC35 /* CommonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE72720A87F8600D3CC35 /* CommonService.swift */; };
-		C08AE72B20A87F8600D3CC35 /* PetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE72820A87F8600D3CC35 /* PetService.swift */; };
 		C08AE72C20A87F8600D3CC35 /* BeaconService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE72920A87F8600D3CC35 /* BeaconService.swift */; };
 		C0B5C86621886C0500AC512C /* Toybox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B5C86521886C0500AC512C /* Toybox.swift */; };
 /* End PBXBuildFile section */
@@ -52,9 +52,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C087359C218DFF19004031D2 /* TagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTableViewCell.swift; sourceTree = "<group>"; };
 		C08AE6BD20A876D700D3CC35 /* Gps-client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gps-client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C08AE6C020A876D700D3CC35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C08AE6C220A876D700D3CC35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C08AE6C220A876D700D3CC35 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C08AE6C520A876D700D3CC35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C08AE6C720A876D800D3CC35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C08AE6CA20A876D800D3CC35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -85,7 +86,6 @@
 		C08AE72020A87B0200D3CC35 /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		C08AE72220A87BCC00D3CC35 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C08AE72720A87F8600D3CC35 /* CommonService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonService.swift; sourceTree = "<group>"; };
-		C08AE72820A87F8600D3CC35 /* PetService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetService.swift; sourceTree = "<group>"; };
 		C08AE72920A87F8600D3CC35 /* BeaconService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconService.swift; sourceTree = "<group>"; };
 		C0B5C86521886C0500AC512C /* Toybox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toybox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +108,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C087359A218DFEE1004031D2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C08AE6C220A876D700D3CC35 /* MainViewController.swift */,
+				C087359C218DFF19004031D2 /* TagTableViewCell.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C087359B218DFEEA004031D2 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				C08AE6C420A876D700D3CC35 /* Main.storyboard */,
+				C08AE6C920A876D800D3CC35 /* LaunchScreen.storyboard */,
+			);
+			path = Xibs;
+			sourceTree = "<group>";
+		};
 		C08AE6B420A876D700D3CC35 = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +147,8 @@
 		C08AE6BF20A876D700D3CC35 /* Gps-client */ = {
 			isa = PBXGroup;
 			children = (
+				C087359B218DFEEA004031D2 /* Xibs */,
+				C087359A218DFEE1004031D2 /* ViewControllers */,
 				C0B5C86421886BF800AC512C /* Commons */,
 				C08AE70D20A879E900D3CC35 /* Extesnions */,
 				C08AE6F020A8784900D3CC35 /* Network */,
@@ -136,10 +156,7 @@
 				C08AE6E120A8778B00D3CC35 /* Model */,
 				C08AE6E020A8772C00D3CC35 /* Protocols */,
 				C08AE6C020A876D700D3CC35 /* AppDelegate.swift */,
-				C08AE6C220A876D700D3CC35 /* ViewController.swift */,
-				C08AE6C420A876D700D3CC35 /* Main.storyboard */,
 				C08AE6C720A876D800D3CC35 /* Assets.xcassets */,
-				C08AE6C920A876D800D3CC35 /* LaunchScreen.storyboard */,
 				C08AE6CC20A876D800D3CC35 /* Info.plist */,
 			);
 			path = "Gps-client";
@@ -241,7 +258,6 @@
 			children = (
 				C08AE72920A87F8600D3CC35 /* BeaconService.swift */,
 				C08AE72720A87F8600D3CC35 /* CommonService.swift */,
-				C08AE72820A87F8600D3CC35 /* PetService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -360,7 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C08AE6C320A876D700D3CC35 /* ViewController.swift in Sources */,
+				C08AE6C320A876D700D3CC35 /* MainViewController.swift in Sources */,
 				C08AE71A20A87A6E00D3CC35 /* CLLocation+Extensions.swift in Sources */,
 				C08AE6FE20A878B300D3CC35 /* TagRangingManager.swift in Sources */,
 				C08AE70C20A8797F00D3CC35 /* Location.swift in Sources */,
@@ -372,7 +388,6 @@
 				C08AE72A20A87F8600D3CC35 /* CommonService.swift in Sources */,
 				C08AE6F320A8786500D3CC35 /* BeaconDetectedPayload.swift in Sources */,
 				C08AE70520A8794900D3CC35 /* NetworkClientManager.swift in Sources */,
-				C08AE72B20A87F8600D3CC35 /* PetService.swift in Sources */,
 				C08AE70820A8794900D3CC35 /* NetworkClient.swift in Sources */,
 				C08AE6EF20A877F900D3CC35 /* TagManager.swift in Sources */,
 				C08AE71920A87A6E00D3CC35 /* Data+Extensions.swift in Sources */,
@@ -383,6 +398,7 @@
 				C08AE70920A8794900D3CC35 /* NetworkTask.swift in Sources */,
 				C08AE6E720A877D700D3CC35 /* Beacon.swift in Sources */,
 				C08AE71F20A87A6E00D3CC35 /* String+Extensions.swift in Sources */,
+				C087359D218DFF19004031D2 /* TagTableViewCell.swift in Sources */,
 				C08AE72120A87B0200D3CC35 /* Date+Extensions.swift in Sources */,
 				C08AE72320A87BCC00D3CC35 /* Extensions.swift in Sources */,
 				C08AE71120A87A1F00D3CC35 /* JSONable.swift in Sources */,

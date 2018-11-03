@@ -13,10 +13,13 @@ protocol TagRangingManagerDelegate: class {
 	func rangingManager(_ manager: TagRangingManager, didDetectNewBeacons beacons: [Beacon]) //called only when beacons enters range
 	func rangingManager(_ manager: TagRangingManager, didRetrieve location: Location, for beacons: [Beacon]) // called when location update is needed
 	func rangingManager(_ manager: TagRangingManager, didReportOutOfRangeBeacons beacons: [Beacon], with location: Location?)
+	func rangingManager(_ manager: TagRangingManager, didUpdate location: Location)
 }
 
 protocol TagRangingManagerProtocol: class {
 	var delegate: TagRangingManagerDelegate? { get set }
+	var sendingRequestInterval: TimeInterval { get set }
+	var allBeacons: [Beacon] { get }
 	func requestAlwaysPermissions(with completion: ((_ granted: Bool) -> Void)?)
 	func reset()
 	func refreshBeaconRanging()
@@ -32,6 +35,7 @@ final class TagRangingManager: NSObject, TagRangingManagerProtocol {
 	
 	// MARK: - Public
 	weak var delegate: TagRangingManagerDelegate?
+	var sendingRequestInterval: TimeInterval = 5.0
 	var visibleBeacons: [UUID: [Beacon]] = [:]
 	var atKnownLocation: Bool = false
 	private var beaconReportedLocation: [String: CLLocation] = [:]
@@ -272,6 +276,11 @@ extension TagRangingManager: CLLocationManagerDelegate {
 		self.refreshLocationServices()
 	}
 	
+	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+		guard let location: CLLocation = locations.last else { return }
+		self.delegate?.rangingManager(self, didUpdate: location.pawscoutLocation)
+	}
+	
 	// MARK: - Privates
 	
 	private func continueMonitoring() {
@@ -383,14 +392,9 @@ extension TagRangingManager: CLLocationManagerDelegate {
 	
 	func shouldReportLocation(for beacon: Beacon, currentLocation: CLLocation, reportedLocation: CLLocation?) -> Bool {
 		guard let reportedLocation: CLLocation = reportedLocation else { return true }
-		let distance: Double = reportedLocation.distance(from: currentLocation)
 		let delta: TimeInterval = Date().timeIntervalSince(reportedLocation.timestamp)
-		let atKnownLocation: Bool = self.atKnownLocation
 		
-		if distance > TagRangingManager.minLocationChangeForReport && delta > TimeInterval.time5min {
-			return true
-		}
-		if delta > TimeInterval.time15min && !atKnownLocation {
+		if delta > self.sendingRequestInterval {
 			return true
 		}
 		return false
