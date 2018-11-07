@@ -26,12 +26,13 @@ final class MainViewController: UIViewController {
 		self.tableView.dataSource = self
 		self.statusLabel.text = String.empty
 		self.intervalSlider.addTarget(self, action: #selector(self.didChangeSliderValue), for: .valueChanged)
+		self.intervalSlider.setValue(5.0, animated: false)
 	}
 	
 	@objc private func didChangeSliderValue(sender: UISlider) {
 		let roundedValue: Float = sender.value.rounded(.down)
 		sender.setValue(roundedValue, animated: true)
-		self.tagManager.setUpdatingInterval(with: TimeInterval(roundedValue/60.0))
+		self.tagManager.setUpdatingInterval(with: TimeInterval(60.0/roundedValue))
 		self.updateIntervalLabel(with: Int(roundedValue))
 	}
 	
@@ -74,7 +75,9 @@ extension MainViewController: UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		guard let cell: TagTableViewCell = tableView.dequeueReusableCell(withIdentifier: TagTableViewCell.reuseIdentifier) as? TagTableViewCell else { return UITableViewCell() }
+		guard let cell: TagTableViewCell = tableView.dequeueReusableCell(withIdentifier: TagTableViewCell.reuseIdentifier) as? TagTableViewCell else {
+			return UITableViewCell()
+		}
 		let beacon: Beacon = self.tagManager.rangingManager.allBeacons[indexPath.row]
 		cell.update(with: beacon.rssi, distance: self.tagManager.calculateDistance(with: beacon.rssi))
 		return cell
@@ -90,6 +93,4 @@ extension MainViewController: TagManagerDelegate {
 		self.currentLocation = location
 		self.locationLabel.text = "\(location.latitude);\n\(location.longitude)"
 	}
-	
-	
 }

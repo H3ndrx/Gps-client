@@ -9,7 +9,7 @@
 import Foundation
 
 extension URL {
-	static let base: URL = URL(string: "http://192.168.0.73:8080")!
+	static let base: URL = URL(string: "http://192.168.1.241:8080")!
 	
 	static func url(forEndpoint endpoint: Endpoint, path: String = String.empty) -> URL {
 		let urlString: String = "/api/v1\(endpoint.rawValue)\(path)"

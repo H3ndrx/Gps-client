@@ -9,7 +9,7 @@
 import UIKit
 
 final class TagTableViewCell: UITableViewCell {
-	static let reuseIdentifier: String = "TagTableViewCell"
+	static let reuseIdentifier: String = "TagTableViewCellID"
 	@IBOutlet weak var signalStrengthLabel: UILabel!
 	@IBOutlet weak var distanceLabel: UILabel!
 	

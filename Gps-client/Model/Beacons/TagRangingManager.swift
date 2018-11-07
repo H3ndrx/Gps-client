@@ -10,6 +10,7 @@ import CoreLocation
 import UIKit
 
 protocol TagRangingManagerDelegate: class {
+	func rangingManager(_ manager: TagRangingManager, didRangeBeacons beacons: [Beacon]) //called all the time
 	func rangingManager(_ manager: TagRangingManager, didDetectNewBeacons beacons: [Beacon]) //called only when beacons enters range
 	func rangingManager(_ manager: TagRangingManager, didRetrieve location: Location, for beacons: [Beacon]) // called when location update is needed
 	func rangingManager(_ manager: TagRangingManager, didReportOutOfRangeBeacons beacons: [Beacon], with location: Location?)
@@ -243,7 +244,7 @@ extension TagRangingManager: CLLocationManagerDelegate {
 		self.removeObsoleteBeacons(from: &self.visibleBeacons)
 		
 		self.updateBeacons(from: beacons)
-		
+		self.delegate?.rangingManager(self, didRangeBeacons: self.allBeacons)
 		self.reportLocation(for: self.allBeacons)
 	}
 	
@@ -359,7 +360,7 @@ extension TagRangingManager: CLLocationManagerDelegate {
 	}
 	
 	private func beaconsToRemove(from beacons: [String: TimeInterval]) -> [String] {
-		return beacons.flatMap { (arg: (beaconId: String, timestamp: TimeInterval)) in
+		return beacons.compactMap { (arg: (beaconId: String, timestamp: TimeInterval)) in
 			let visibleGap: TimeInterval = Date().timeIntervalSince1970 - arg.timestamp
 			if visibleGap > TagRangingManager.timeout {
 				return arg.beaconId
@@ -382,6 +383,7 @@ extension TagRangingManager: CLLocationManagerDelegate {
 		
 		for beacon: Beacon in beacons where self.shouldReportLocation(for: beacon, currentLocation: currentLocation, reportedLocation: self.beaconReportedLocation[beacon.tag.identifier.id]) {
 			beaconsToReport.append(beacon)
+			print("Current location", currentLocation.timestamp)
 			self.beaconReportedLocation[beacon.tag.identifier.id] = currentLocation
 		}
 		if !beaconsToReport.isEmpty {
@@ -393,7 +395,6 @@ extension TagRangingManager: CLLocationManagerDelegate {
 	func shouldReportLocation(for beacon: Beacon, currentLocation: CLLocation, reportedLocation: CLLocation?) -> Bool {
 		guard let reportedLocation: CLLocation = reportedLocation else { return true }
 		let delta: TimeInterval = Date().timeIntervalSince(reportedLocation.timestamp)
-		
 		if delta > self.sendingRequestInterval {
 			return true
 		}
@@ -402,13 +403,18 @@ extension TagRangingManager: CLLocationManagerDelegate {
 	
 	private func updateBeacons(from beacons: [CLBeacon]) {
 		for beacon: CLBeacon in beacons {
-			var foundBeacon: Beacon? = self.allBeacons.first(where: { (enumeratedBeacon: Beacon) -> Bool in
+			var uuiBeacons: [Beacon] = self.visibleBeacons[beacon.proximityUUID] ?? []
+			guard let indexOfBeacon: Int = uuiBeacons.firstIndex(where: { (enumeratedBeacon: Beacon) -> Bool in
 				return enumeratedBeacon.tag.identifier.major == beacon.major.intValue && enumeratedBeacon.tag.identifier.minor == beacon.minor.intValue
-			})
-			foundBeacon?.rssi = beacon.rssi
-			if let newProximity: Proximity = Proximity(rawValue: beacon.proximity.rawValue) {
-				foundBeacon?.proximity = newProximity
+			}) else {
+				print("Did not found beacon")
+				break
 			}
+			uuiBeacons[indexOfBeacon].rssi = beacon.rssi
+			if let newProximity: Proximity = Proximity(rawValue: beacon.proximity.rawValue) {
+				uuiBeacons[indexOfBeacon].proximity = newProximity
+			}
+			self.visibleBeacons[beacon.proximityUUID] = uuiBeacons
 		}
 	}
 }

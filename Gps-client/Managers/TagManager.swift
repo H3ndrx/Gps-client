@@ -64,10 +64,14 @@ final class TagManager: NSObject {
 
 extension TagManager: TagRangingManagerDelegate {
 	//new beacons
+	func rangingManager(_ manager: TagRangingManager, didRangeBeacons beacons: [Beacon]) {
+		self.delegate?.didUpdateTags(visibleBeacons: beacons)
+	}
+	
 	func rangingManager(_ manager: TagRangingManager, didDetectNewBeacons beacons: [Beacon]) {
 		guard let deviceId: String = UIDevice.current.identifierForVendor?.uuidString else { fatalError("NO ID FOR VENDOR") }
 		print("New beacons")
-		self.delegate?.didUpdateTags(visibleBeacons: self.rangingManager.allBeacons)
+		self.delegate?.didUpdateTags(visibleBeacons: beacons)
 		for beacon: Beacon in beacons {
 			guard let location: Location = beacon.tag.location else { return }
 			
