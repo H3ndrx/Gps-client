@@ -47,9 +47,10 @@ final class BeaconNetworkService: BeaconService {
 	
 	func update(location: Location, for tag: Tag, completion: ((_ success: Bool, _ error: Error?) -> Void)?) {
 		guard let deviceId: String = UIDevice.current.identifierForVendor?.uuidString else { fatalError("NO ID FOR VENDOR") }
+		let payload: UpdateLocationPayload = UpdateLocationPayload(location: location, deviceId: deviceId)
 		let url: URL = URL.url(forEndpoint: .tag, path: Path.coordinates(for: tag))
 		
-		self.clientManager.performRequest(with: url, method: .post, body: location.json, priority: .low) { (data: Data?, error: Error?) in
+		self.clientManager.performRequest(with: url, method: .post, body: payload.json) { (data: Data?, error: Error?) in
 			if let data: Data = data, data.isEmpty {
 				completion?(true, nil)
 			} else {

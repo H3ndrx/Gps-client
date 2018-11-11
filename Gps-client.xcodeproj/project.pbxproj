@@ -39,6 +39,7 @@
 		C08AE72A20A87F8600D3CC35 /* CommonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE72720A87F8600D3CC35 /* CommonService.swift */; };
 		C08AE72C20A87F8600D3CC35 /* BeaconService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AE72920A87F8600D3CC35 /* BeaconService.swift */; };
 		C0B5C86621886C0500AC512C /* Toybox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B5C86521886C0500AC512C /* Toybox.swift */; };
+		C0C1A5DC2198849C006D27EB /* UpdateLocationPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C1A5DB2198849C006D27EB /* UpdateLocationPayload.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		C08AE72720A87F8600D3CC35 /* CommonService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonService.swift; sourceTree = "<group>"; };
 		C08AE72920A87F8600D3CC35 /* BeaconService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconService.swift; sourceTree = "<group>"; };
 		C0B5C86521886C0500AC512C /* Toybox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toybox.swift; sourceTree = "<group>"; };
+		C0C1A5DB2198849C006D27EB /* UpdateLocationPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLocationPayload.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				C08AE6F220A8786500D3CC35 /* BeaconDetectedPayload.swift */,
+				C0C1A5DB2198849C006D27EB /* UpdateLocationPayload.swift */,
 			);
 			path = Payloads;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				C08AE70520A8794900D3CC35 /* NetworkClientManager.swift in Sources */,
 				C08AE70820A8794900D3CC35 /* NetworkClient.swift in Sources */,
 				C08AE6EF20A877F900D3CC35 /* TagManager.swift in Sources */,
+				C0C1A5DC2198849C006D27EB /* UpdateLocationPayload.swift in Sources */,
 				C08AE71920A87A6E00D3CC35 /* Data+Extensions.swift in Sources */,
 				C08AE6E920A877D700D3CC35 /* Tag.swift in Sources */,
 				C08AE6C120A876D700D3CC35 /* AppDelegate.swift in Sources */,

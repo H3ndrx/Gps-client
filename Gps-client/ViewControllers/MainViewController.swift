@@ -36,13 +36,7 @@ final class MainViewController: UIViewController {
 		self.updateIntervalLabel(with: Int(roundedValue))
 	}
 	
-	@IBAction func didTapStartButton(_ sender: Any) {
-		if let currentLocation: Location = self.currentLocation {
-			self.tagManager.update(location: currentLocation.core, major: 234, minor: 4352) { (success: Bool, error: Error?) in
-				print("\(success)  \(error)")
-			}
-		}
-		
+	@IBAction func didTapStartButton(_ sender: Any) {		
 		guard !self.isRanging else {
 			self.isRanging = false
 			self.tagManager.stopMonitoring()
